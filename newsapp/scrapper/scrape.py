@@ -64,14 +64,9 @@ def scrape_sky_news():
     url = 'https://news.sky.com/info/rss'
     response = requests.get(url).text
     soup = BeautifulSoup(response, features="html.parser")
-    rss_links = soup.find('ul').find_all('li')
-    rss_links = [link.find('a').get('href') for link in rss_links]
-    clean_data = []
-    for link in rss_links:
-        link = "http://feeds.skynews.com/feeds/rss" + link + ".xml"
-        clean_data.append(link)
-
-    return clean_data
+    rss_links = soup.find_all('ul')[2].find_all('a')
+    rss_links = [link.get('href') for link in rss_links]
+    return rss_links
 
 
 def scrape_cnn_news():
@@ -87,4 +82,3 @@ def scrape_cnn_news():
     rss_links = [link.get('href') for link in rss_links]
     
     return rss_links
-
