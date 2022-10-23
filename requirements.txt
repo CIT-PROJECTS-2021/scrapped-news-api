@@ -1,0 +1,8 @@
+Flask
+Flask-SQLAlchemy
+requests
+beautifulsoup4
+lxml
+sqlalchemy
+pytz
+pymysql
