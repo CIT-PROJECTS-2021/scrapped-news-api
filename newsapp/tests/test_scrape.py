@@ -1,8 +1,6 @@
 # This file is used to test the newsapp\scrapper\scrape.py file
-
 import unittest
 from newsapp.scrapper.scrape import scrape_un_news, parse_un_rss_data, scrape_nytimes, scrape_cnn_news, scrape_sky_news, scrape_rss
-
 
 class TestScrape(unittest.TestCase):
     def test_scrape_un_news(self):
